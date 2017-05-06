@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 import java.util.Arrays;
 
 /**
+ *
  * Created by Cooper on 2017/5/6.
  */
 @Test
@@ -41,11 +42,11 @@ public abstract class BaseSort {
 
     /**
      * 数据交换
-     * @param array
-     * @param i
-     * @param j
+     * @param array origin
+     * @param i index I
+     * @param j Index J
      */
-    public static void swap(int[] array, int i, int j){
+    static void swap(int[] array, int i, int j){
         int temp = array[i];
         array[i] = array[j];
         array[j] = temp;
