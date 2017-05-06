@@ -43,13 +43,16 @@ public abstract class BaseSort {
     /**
      * 数据交换
      * @param array origin
-     * @param i index I
-     * @param j Index J
+     * @param left index I
+     * @param right Index J
      */
-    static void swap(int[] array, int i, int j){
-        int temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
+    protected void swap(int[] array, int left, int right){
+        if (left == right) return;
+        logger.info("swap value:" + array[left] + " and " + array[right]);
+        int temp = array[left];
+        array[left] = array[right];
+        array[right] = temp;
+        logger.info("after swap :"+Arrays.toString(array));
     }
 
 }
