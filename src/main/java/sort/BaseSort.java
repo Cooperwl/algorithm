@@ -6,6 +6,8 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import java.util.Arrays;
+
 /**
  * Created by Cooper on 2017/5/6.
  */
@@ -21,6 +23,7 @@ public abstract class BaseSort {
     @BeforeTest
     public void befort(){
         start = System.currentTimeMillis();
+        logger.info("origin array： "+Arrays.toString(array));
     }
 
     @Test
