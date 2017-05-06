@@ -37,7 +37,7 @@ public abstract class BaseSort {
     @AfterTest
     public void after(){
         end = System.currentTimeMillis();
-        logger.info("sort end. take {} ms.", end-start);
+        logger.info("sort end. result:{} ,take {} ms.", Arrays.toString(array), end-start);
     }
 
     /**
