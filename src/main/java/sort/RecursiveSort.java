@@ -26,10 +26,14 @@ public class RecursiveSort extends BaseSort {
      * @param rightIndex 右指针
      */
     private void recursive(int[] array, int leftIndex, int rightIndex){
+
         if (leftIndex >= rightIndex) return;
+        logger.info("recursive compare left index:{} and right index:{}", leftIndex, rightIndex);
 
         int mid = (leftIndex + rightIndex) / 2;
+        logger.info("start recursive left index:{}. mid is {}",leftIndex,mid);
         recursive(array,leftIndex,mid);//递归排序左边
+        logger.info("start recursive right index:{}. mid is {}",rightIndex,mid);
         recursive(array,mid+1,rightIndex);//递归排序右边
         merge(array,leftIndex, mid, rightIndex);
     }
@@ -43,7 +47,7 @@ public class RecursiveSort extends BaseSort {
      */
     private void merge(int[] array, int leftIndex, int mid, int rightIndex) {
 
-        logger.info("merge from index:{} to index:{}, middle:{}",leftIndex, rightIndex,mid);
+        logger.info("merge from left index:{} to right index:{}, middle:{}, origin array:{}",leftIndex, rightIndex,mid, Arrays.toString(array));
         //[left, mid] [mid+1, right]
         int[] temp = new int[rightIndex - leftIndex + 1]; //中间数组
         int i = leftIndex;
@@ -59,13 +63,13 @@ public class RecursiveSort extends BaseSort {
                 temp[k++] = array[j++];
             }
         }
-        logger.info("temp Array after first circle to :"+Arrays.toString(temp));
         while(i <= mid) {
             temp[k++] = array[i++];
         }
         while(j <= rightIndex) {
             temp[k++] = array[j++];
         }
+        logger.info("temp Array after first circle to :"+Arrays.toString(temp));
         for(int p=0; p<temp.length; p++) {
             array[leftIndex + p] = temp[p];
         }
