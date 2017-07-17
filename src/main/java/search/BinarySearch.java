@@ -45,7 +45,7 @@ public class BinarySearch extends BaseSearch {
     @Test
     public void search2(){
         array = SelectSort.sort(array);
-        doSearch(array, 3, 0, array.length);
+        doSearch(array, 3, 0, array.length-1);
     }
 
     public void doSearch(int a[], int value, int low, int high){
