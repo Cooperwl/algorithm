@@ -40,6 +40,15 @@ public abstract class BaseSort {
         logger.info("sort end. result:{} ,take {} ms.", Arrays.toString(array), end-start);
     }
 
+    public void setArray(int[] array) {
+        this.array = array;
+    }
+
+    public int[] getArray() {
+        return array;
+    }
+
+
     /**
      * 数据交换
      * @param array origin

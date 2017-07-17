@@ -42,4 +42,11 @@ public class SelectSort extends BaseSort{
 
         logger.info(Arrays.toString(array)+", total steps: {}", step);
     }
+
+    public static int[] sort(int[] array){
+        SelectSort sort = new SelectSort();
+        sort.setArray(array);
+        sort.sort();
+        return sort.getArray();
+    }
 }
